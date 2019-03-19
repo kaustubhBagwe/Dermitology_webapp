@@ -1,0 +1,199 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<style>
+     .spliter{
+        background-color:#ffd800;width:20%;height:4px;box-shadow: 0px 8px 12px #333;margin-bottom: 25px;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" style="margin-top:158px;">
+            <h2>Title</h2>
+            <div class="spliter"></div>
+            <div class="col-lg-6">
+                <p>
+                    DESCRIPTION
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <section>
+                    <div class='row'>
+
+                        <div class='col-md-12'>
+                            <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+                                <!-- Bottom Carousel Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#quote-carousel" data-slide-to="1"></li>
+                                    <li data-target="#quote-carousel" data-slide-to="2"></li>
+                                </ol>
+
+                                <!-- Carousel Slides / Quotes -->
+                                <div class="carousel-inner">
+
+                                    <!-- Quote 1 -->
+                                    <div class="item active" style="background-color:#fff">
+                                        <blockquote>
+                                            <div class="row">
+                                                <div class="col-sm-3 text-center">
+                                                    <img src="http://www.reactiongifs.com/r/overbite.gif" style="width: 100%;height:100%;">
+                                                    <!--<img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" style="width: 100px;height:100px;">-->
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <p>I had a patch of Vitiligo on face. I was very disappointed of all the medical treatment given to me by many doctors. Finally I met Dr Tambe at Innovation. She performed a grafting surgery for me and I got completely normal colour on my face. Thank you Dr Tambe </p>
+
+                                                </div>
+                                            </div>
+                                        </blockquote>
+                                    </div>
+                                    <!-- Quote 2 -->
+                                    <div class="item" style="background-color:#fff">
+                                        <blockquote>
+                                            <div class="row">
+                                                <div class="col-sm-3 text-center">
+                                                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/mijustin/128.jpg" style="width: 100%;height:100%;">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <p>I had a patch of Vitiligo on face. I was very disappointed of all the medical treatment given to me by many doctors. Finally I met Dr Tambe at Innovation. She performed a grafting surgery for me and I got completely normal colour on my face. Thank you Dr Tambe </p>
+
+                                                </div>
+                                            </div>
+                                        </blockquote>
+                                    </div>
+                                    <!-- Quote 3 -->
+                                    <div class="item" style="background-color:#fff">
+                                        <blockquote>
+                                            <div class="row">
+                                                <div class="col-sm-3 text-center">
+                                                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/keizgoesboom/128.jpg" style="width: 100%;height:100%;">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <p>I had a patch of Vitiligo on face. I was very disappointed of all the medical treatment given to me by many doctors. Finally I met Dr Tambe at Innovation. She performed a grafting surgery for me and I got completely normal colour on my face. Thank you Dr Tambe </p>
+
+                                                </div>
+                                            </div>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <!-- Carousel Buttons Next/Prev -->
+                                <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+                                <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* carousel */
+    #quote-carousel {
+        padding: 0 10px 30px 10px;
+        margin-top: 30px;
+    }
+
+        /* Control buttons  */
+        #quote-carousel .carousel-control {
+            background: none;
+            color: #222;
+            font-size: 2.3em;
+            text-shadow: none;
+            margin-top: 30px;
+        }
+            /* Previous button  */
+            #quote-carousel .carousel-control.left {
+                left: -12px;
+            }
+            /* Next button  */
+            #quote-carousel .carousel-control.right {
+                right: -12px !important;
+            }
+        /* Changes the position of the indicators */
+        #quote-carousel .carousel-indicators {
+            right: 50%;
+            top: auto;
+            bottom: 0px;
+            margin-right: -19px;
+        }
+            /* Changes the color of the indicators */
+            #quote-carousel .carousel-indicators li {
+                background: #578322;
+            }
+
+            #quote-carousel .carousel-indicators .active {
+                /*background: #333333;*/
+                background: #f4f4f4;
+                border: 1px solid #578322;
+            }
+
+        #quote-carousel img {
+            width: 250px;
+            height: 100px;
+        }
+    /* End carousel */
+
+    .item blockquote {
+        border-left: none;
+        margin: 0;
+    }
+
+        .item blockquote img {
+            margin-bottom: 10px;
+        }
+
+        .item blockquote p:before {
+            content: "\f10d";
+            font-family: 'Fontawesome';
+            float: left;
+            margin-right: 10px;
+        }
+
+
+
+    /**
+      MEDIA QUERIES
+    */
+
+    /* Small devices (tablets, 768px and up) */
+    @@media (min-width: 768px) {
+        #quote-carousel {
+            margin-bottom: 0;
+            padding: 0 40px 30px 40px;
+        }
+    }
+
+    /* Small devices (tablets, up to 768px) */
+    @@media (max-width: 768px) {
+
+        /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
+
+        #quote-carousel .carousel-indicators {
+            bottom: -20px !important;
+        }
+
+            #quote-carousel .carousel-indicators li {
+                display: inline-block;
+                margin: 0px 5px;
+                width: 15px;
+                height: 15px;
+            }
+
+                #quote-carousel .carousel-indicators li.active {
+                    margin: 0px 5px;
+                    width: 20px;
+                    height: 20px;
+                }
+    }
+</style>
