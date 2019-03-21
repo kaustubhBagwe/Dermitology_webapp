@@ -19,7 +19,7 @@ namespace V01_InnovtionWebAPP.ActionMethod
                 {
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.CommandText = "sp_GetAdminEnquriyList";
+                    cmd.CommandText = "sp_GetAdminEnquiryList";
                     DataSet ds = db.ReturnDataset(cmd);
                     foreach (DataRow item in ds.Tables[0].Rows)
                     {
@@ -35,7 +35,7 @@ namespace V01_InnovtionWebAPP.ActionMethod
             }
         }
 
-        public results saveEnquiry(enquiryModel enquryParams)
+        public results saveEnquiryUser(enquiryModel enquryParams)
         {
             using (DAL db = new DAL())
             {
