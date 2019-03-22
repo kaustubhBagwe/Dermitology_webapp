@@ -3,22 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using V01_InnovtionWebAPP.ActionMethod;
+using V01_InnovtionWebAPP.Model;
 
 namespace V01_InnovtionWebAPP.Controllers
 {
     public class TestimonialsController : Controller
     {
-      
+        testimonialController _newInta =new testimonialController();
         // GET: Testimonials
         public ActionResult Index()
         {
+           
             return View();
         }
         // GET: Testimonials Admin Dashboard
         public ActionResult Dashboard()
         {
-
-            return View();
+            testimonialModel _is = new testimonialModel();
+            _is.onHomePage = false;
+            var result = _newInta.getUsersTestimonialsList(_is);
+            return View(result);
         }
         // GET: Testimonials/Details/5
         public ActionResult Details(int id)
@@ -39,7 +44,7 @@ namespace V01_InnovtionWebAPP.Controllers
             try
             {
                 // TODO: Add insert logic here
-
+              
                 return RedirectToAction("Index");
             }
             catch
