@@ -97,6 +97,32 @@ namespace V01_InnovtionWebAPP.ActionMethod
             }
         }
 
+        public results deleteBlogs(blogModel blogparams)
+        {
+            using (DAL db = new DAL())
+            {
+                results results = new results();
+                try
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "sp_DeleteBlogs";
+                    cmd.Parameters.AddWithValue("@Id", blogparams.id);
+                    DataSet ds = db.ReturnDataset(cmd);
+                    results.flag = Convert.ToBoolean(ds.Tables[0].Rows[0]["Flag"]);
+                    results.msg = Convert.ToString(ds.Tables[0].Rows[0]["msg"]);
+
+                    return results;
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
         public class results
         {
             public Boolean flag { get; set; }
