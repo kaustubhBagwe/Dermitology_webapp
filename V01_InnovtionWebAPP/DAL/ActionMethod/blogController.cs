@@ -61,5 +61,74 @@ namespace V01_InnovtionWebAPP.ActionMethod
                 }
             }
         }
+
+        public results saveBlogs(blogModel blogparams)
+        {
+            using (DAL db = new DAL())
+            {
+                results results = new results();
+                try
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "sp_SaveBlogs";
+                    cmd.Parameters.AddWithValue("@Id", blogparams.id);
+                    cmd.Parameters.AddWithValue("@Title", blogparams.title);
+                    cmd.Parameters.AddWithValue("@Description", blogparams.description);
+                    cmd.Parameters.AddWithValue("@SEOTitle", blogparams.SEOtitle);
+                    cmd.Parameters.AddWithValue("@SEOMeta", blogparams.SEOmeta);
+                    cmd.Parameters.AddWithValue("@onHomePage", blogparams.onHomePage);
+                    cmd.Parameters.AddWithValue("@Active", blogparams.active);
+                    cmd.Parameters.AddWithValue("@loginID", "123");
+                    cmd.Parameters.AddWithValue("@Mode", blogparams.mode);
+
+                    DataSet ds = db.ReturnDataset(cmd);
+
+                    results.flag = Convert.ToBoolean(ds.Tables[0].Rows[0]["Flag"]);
+                    results.msg = Convert.ToString(ds.Tables[0].Rows[0]["msg"]);
+
+                    return results;
+                }
+                catch (Exception)
+                {
+                    
+                    throw;
+                }
+            }
+        }
+
+        public results deleteBlogs(blogModel blogparams)
+        {
+            using (DAL db = new DAL())
+            {
+                results results = new results();
+                try
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "sp_DeleteBlogs";
+                    cmd.Parameters.AddWithValue("@Id", blogparams.id);
+                    DataSet ds = db.ReturnDataset(cmd);
+                    results.flag = Convert.ToBoolean(ds.Tables[0].Rows[0]["Flag"]);
+                    results.msg = Convert.ToString(ds.Tables[0].Rows[0]["msg"]);
+
+                    return results;
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public class results
+        {
+            public Boolean flag { get; set; }
+            public string msg { get; set; }
+
+        }
+
     }
 }
