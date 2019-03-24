@@ -198,9 +198,11 @@
     <Compile Include="Controllers\aboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminPanelController.cs" />
+    <Compile Include="Controllers\CategoryImagiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ServiceCategoriesController.cs" />
+    <Compile Include="Controllers\ServiceSubCtegoriesController.cs" />
     <Compile Include="Controllers\TestimonialsController.cs" />
     <Compile Include="DAL\ActionMethod\blogController.cs" />
     <Compile Include="DAL\ActionMethod\enquiryController.cs" />
@@ -213,11 +215,13 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\blogModel.cs" />
+    <Compile Include="Models\CategoryImagies.cs" />
     <Compile Include="Models\enquiryModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\mediaModel.cs" />
     <Compile Include="Models\ServiceCategory.cs" />
+    <Compile Include="Models\ServiceSubCtegory.cs" />
     <Compile Include="Models\testimonialModel.cs" />
     <Compile Include="Models\Testimonials.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1774,9 +1778,20 @@
     <Content Include="Views\ServiceCategories\Edit.cshtml" />
     <Content Include="Views\ServiceCategories\Index.cshtml" />
     <Content Include="Views\Shared\_AdminLayOut.cshtml" />
+    <Content Include="Views\ServiceSubCtegories\Create.cshtml" />
+    <Content Include="Views\ServiceSubCtegories\Delete.cshtml" />
+    <Content Include="Views\ServiceSubCtegories\Details.cshtml" />
+    <Content Include="Views\ServiceSubCtegories\Edit.cshtml" />
+    <Content Include="Views\ServiceSubCtegories\Index.cshtml" />
+    <Content Include="Views\CategoryImagies\Create.cshtml" />
+    <Content Include="Views\CategoryImagies\Delete.cshtml" />
+    <Content Include="Views\CategoryImagies\Details.cshtml" />
+    <Content Include="Views\CategoryImagies\Edit.cshtml" />
+    <Content Include="Views\CategoryImagies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Imagies\Category\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

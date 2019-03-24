@@ -1,0 +1,89 @@
+﻿@model V01_InnovtionWebAPP.Models.ServiceSubCtegory
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayOut.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ServiceSubCtegory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FK_Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FK_Category.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubCategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubCategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubCategoryDescrption)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubCategoryDescrption)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Isctive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Isctive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEOMeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEOMeta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEOTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEOTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LMD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LMD)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<V01_InnovtionWebAPP.Models.ServiceSubCtegory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayOut.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FK_Category.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubCategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubCategoryDescrption)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Isctive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEOMeta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEOTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LMD)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FK_Category.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubCategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubCategoryDescrption)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Isctive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEOMeta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEOTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LMD)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ServiceSubCategoryID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ServiceSubCategoryID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ServiceSubCategoryID })
+        </td>
+    </tr>
+}
+
+</table>

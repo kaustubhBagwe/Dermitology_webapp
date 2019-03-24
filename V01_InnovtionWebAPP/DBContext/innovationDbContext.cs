@@ -14,5 +14,9 @@ namespace V01_InnovtionWebAPP.DBContext
         }
 
         public System.Data.Entity.DbSet<V01_InnovtionWebAPP.Models.ServiceCategory> ServiceCategories { get; set; }
+
+        public System.Data.Entity.DbSet<V01_InnovtionWebAPP.Models.ServiceSubCtegory> ServiceSubCtegories { get; set; }
+
+        public System.Data.Entity.DbSet<V01_InnovtionWebAPP.Models.CategoryImagies> CategoryImagies { get; set; }
     }
 }
