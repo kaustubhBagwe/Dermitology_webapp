@@ -202,6 +202,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ServiceCategoriesController.cs" />
     <Compile Include="Controllers\TestimonialsController.cs" />
+    <Compile Include="DAL\ActionMethod\aboutController.cs" />
     <Compile Include="DAL\ActionMethod\blogController.cs" />
     <Compile Include="DAL\ActionMethod\enquiryController.cs" />
     <Compile Include="DAL\ActionMethod\mediaController.cs" />
@@ -211,6 +212,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\aboutModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\blogModel.cs" />
     <Compile Include="Models\enquiryModel.cs" />
@@ -1774,6 +1776,9 @@
     <Content Include="Views\ServiceCategories\Edit.cshtml" />
     <Content Include="Views\ServiceCategories\Index.cshtml" />
     <Content Include="Views\Shared\_AdminLayOut.cshtml" />
+    <Content Include="Views\Blogs\Create.cshtml" />
+    <Content Include="Views\Blogs\Edit.cshtml" />
+    <Content Include="Views\Blogs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
 
 namespace V01_InnovtionWebAPP.Model
 {
+    [Table("in_blogs")]
     public class blogModel
     {
         public Int64 id { get; set; }
