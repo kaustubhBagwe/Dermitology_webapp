@@ -11,6 +11,43 @@ namespace V01_InnovtionWebAPP.ActionMethod
 {
     class aboutController
     {
+        //User
+        public static DataTable getAboutClinic()
+        {
+            using (DAL db = new DAL())
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "sp_GetAboutClinic";
+                DataTable dt = db.ReturnDataTable(cmd);
+                return dt;
+            }
+        }
+
+        public static DataTable getAboutSwagata()
+        {
+            using (DAL db = new DAL())
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "sp_GetAboutSwagata";
+                DataTable dt = db.ReturnDataTable(cmd);
+                return dt;
+            }
+        }
+
+        public static DataTable getAboutConsultants()
+        {
+            using (DAL db = new DAL())
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "sp_GetAboutConsultants";
+                DataTable dt = db.ReturnDataTable(cmd);
+                return dt;
+            }
+        }
+
         //Admin
         public List<aboutCategoryModel> getAboutCategoryList(aboutCategoryModel aboutCategoryParams)
         {
@@ -36,7 +73,27 @@ namespace V01_InnovtionWebAPP.ActionMethod
                 }
             }
         }
-        // Admin
+
+        public static DataTable getAboutCategoryWithId(aboutCategoryModel aboutCategoryParams)
+        {
+            using (DAL db = new DAL())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", aboutCategoryParams.id);
+                    cmd.CommandText = "sp_GetAboutCategoryWithID";
+                    DataTable dt = db.ReturnDataTable(cmd);
+                    return dt;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
+
         public List<aboutImagesModel> getAboutImagesList(aboutImagesModel aboutImagesParams)
         {
             using (DAL db = new DAL())
@@ -46,7 +103,7 @@ namespace V01_InnovtionWebAPP.ActionMethod
                 {
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.CommandText = "sp_getAboutImagesAdmin";
+                    cmd.CommandText = "sp_GetAboutImagesAdmin";
                     DataSet ds = db.ReturnDataset(cmd);
                     foreach (DataRow item in ds.Tables[0].Rows)
                     {
@@ -54,6 +111,26 @@ namespace V01_InnovtionWebAPP.ActionMethod
                         lsaboutimage.Add(data);
                     }
                     return (lsaboutimage);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
+
+        public static DataTable getAboutImagesWithId(aboutImagesModel aboutImagesParams)
+        {
+            using (DAL db = new DAL())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", aboutImagesParams.id);
+                    cmd.CommandText = "sp_GetAboutImagesWithID";
+                    DataTable dt = db.ReturnDataTable(cmd);
+                    return dt;
                 }
                 catch (Exception)
                 {

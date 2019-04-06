@@ -62,6 +62,26 @@ namespace V01_InnovtionWebAPP.ActionMethod
             }
         }
 
+        public static DataTable getBlogWithId(blogModel blogparams)
+        {
+            using (DAL db = new DAL())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "sp_GetBlogWithId";
+                    cmd.Parameters.AddWithValue("@id", blogparams.id);
+                    DataTable dt = db.ReturnDataTable(cmd);
+                    return (dt);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
         public results saveBlogs(blogModel blogparams)
         {
             using (DAL db = new DAL())
